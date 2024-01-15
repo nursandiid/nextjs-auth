@@ -1,7 +1,5 @@
 'use client'
 
-import React from 'react'
-
 import { signIn } from 'next-auth/react'
 import { FcGoogle } from 'react-icons/fc'
 import { FaGithub } from 'react-icons/fa'

@@ -27,8 +27,19 @@ export const ResetSchema = z.object({
   })
 })
 
-export const NewPasswordSchema = z.object({
-  password: z.string().min(6, {
-    message: 'Minimum 6 characters required'
+export const NewPasswordSchema = z
+  .object({
+    password: z.string().min(6, {
+      message: 'Minimum 6 characters required'
+    }),
+    password_confirmation: z.string().min(6, {
+      message: 'Minimum 6 characters required'
+    })
   })
-})
+  .refine(
+    ({ password, password_confirmation }) => password === password_confirmation,
+    {
+      message: 'Password confirmation does not match',
+      path: ['password_confirmation']
+    }
+  )

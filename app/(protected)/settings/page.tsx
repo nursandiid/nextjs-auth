@@ -1,6 +1,7 @@
 'use client'
 
 import { logout } from '@/actions/logout'
+import { Card } from '@/components/ui/card'
 
 export default function SettingPage() {
   const onClick = () => {
@@ -8,8 +9,8 @@ export default function SettingPage() {
   }
 
   return (
-    <div className="bg-white p-10 rounded-xl">
+    <Card className="p-4">
       <button onClick={onClick}>Sign out</button>
-    </div>
+    </Card>
   )
 }

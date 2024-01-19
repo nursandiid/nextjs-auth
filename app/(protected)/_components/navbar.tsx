@@ -24,7 +24,7 @@ export default function Navbar() {
             asChild
             variant={pathname === menu.href ? 'default' : 'outline'}
           >
-            <Link href="/server">{menu.label}</Link>
+            <Link href={menu.href}>{menu.label}</Link>
           </Button>
         ))}
       </div>

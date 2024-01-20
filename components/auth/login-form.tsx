@@ -51,7 +51,6 @@ export default function LoginForm() {
       login(values)
         .then((data) => {
           if (data?.error) {
-            form.reset()
             setError(data.error)
           }
 
